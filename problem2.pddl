@@ -1,0 +1,7 @@
+(define (problem problem_1)
+    (:domain metrictest)
+    (:objects foo)
+    (:init (= (total-cost) 0))
+    (:goal (forall (?t) (done ?t)))
+    (:metric minimize (total-cost))
+)

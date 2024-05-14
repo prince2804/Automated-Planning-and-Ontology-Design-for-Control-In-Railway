@@ -1,0 +1,32 @@
+(define (problem indian_railway_problem)
+    (:domain railway) ; Use the railway domain
+    
+    (:objects
+        Train1 - train
+        StationA - station
+        StationB - station
+        PlatformA - platform
+        PlatformB - platform
+        TrackX - track
+        Incident1 - incident
+    )
+    
+    (:init
+        ; Define the initial state of the problem.
+        (atLocation Train1 StationA) ; Train1 starts at StationA
+        (hasPlatform StationA PlatformA) ; StationA has PlatformA
+        (hasPlatform StationB PlatformB) ; StationB has PlatformB
+        (hasTrack Train1 TrackX) ; Train1 is on TrackX
+        (not (hasDelay Train1 Open)) ; Train1 is not delayed
+        
+        ; Define other initial conditions as needed.
+    )
+    
+    (:goal
+        ; Define the goal state of the problem.
+        (and
+            (atLocation Train1 StationB) ; Train1 should be at StationB
+            (not (hasDelay Train1 Open)) ; Train1 should not be delayed
+        )
+    )
+)
